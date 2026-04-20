@@ -1,0 +1,7 @@
+streamlit>=1.35.0
+numpy>=1.26.0
+scipy>=1.13.0
+matplotlib>=3.8.0
+openai>=1.30.0
+rouge-score>=0.1.2
+bert-score>=0.3.13
