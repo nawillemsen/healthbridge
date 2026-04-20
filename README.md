@@ -2,7 +2,7 @@
 
 WPI DS552 Assignment 7 — PPG Signal Interpretation with LLM
 
-**Live app:** [https://healthbridge.streamlit.app](https://healthbridge.streamlit.app) ← update after deploy
+**Live app:** [https://healthbridge-ds552.streamlit.app](https://healthbridge-ds552.streamlit.app)
 
 HealthBridge accepts a raw photoplethysmography (PPG) signal, extracts physiological features (heart rate, HRV, signal quality index) using classical DSP, and uses **Llama 3.3 70B** (via Groq) to generate a plain-language interpretation with appropriate uncertainty caveats.
 

@@ -184,7 +184,7 @@ No hallucinated medical diagnoses or prescriptions were observed across any gene
 
 HealthBridge is deployed on **Streamlit Community Cloud** ([https://streamlit.io/cloud](https://streamlit.io/cloud)), a managed hosting platform for Streamlit applications with zero-configuration deployment from a public GitHub repository.
 
-**Live app:** [https://healthbridge.streamlit.app](https://healthbridge.streamlit.app) ← update after deploy
+**Live app:** [https://healthbridge-ds552.streamlit.app](https://healthbridge-ds552.streamlit.app)
 
 ### Deployment Steps
 
