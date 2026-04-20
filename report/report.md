@@ -134,32 +134,32 @@ report/
 
 The evaluation harness runs the **comparison model** (`llama-3.1-8b-instant`) against a four-case gold set. Using the smaller model for evaluation preserves the primary model's rate-limit headroom for the interactive Analyze tab. Results are committed in `results/eval_results.json` (run date: 2026-04-19).
 
-### Accuracy Metrics — ROUGE
+### Accuracy Metrics — ROUGE and BERTScore
 
-ROUGE measures n-gram overlap between model-generated interpretations and hand-written reference texts. For open-ended generation tasks, ROUGE-1 values of 0.35–0.55 indicate meaningful lexical alignment.
+ROUGE measures n-gram overlap between model-generated interpretations and hand-written reference texts. For open-ended generation tasks, ROUGE-1 values of 0.35–0.55 indicate meaningful lexical alignment. BERTScore computes contextual embedding similarity using `distilbert-base-uncased`; F1 values above 0.78 indicate strong semantic alignment for medical-text generation tasks.
 
-| Case | Label | SQI | Gate | ROUGE-1 | ROUGE-2 | ROUGE-L | Latency |
-|---|---|---|---|---|---|---|---|
-| case_001 | Healthy resting | 0.91 | ✅ passing | 0.455 | 0.144 | 0.243 | 2.29 s |
-| case_002 | Exercise recovery | 0.82 | ✅ passing | 0.418 | 0.101 | 0.231 | 1.07 s |
-| case_003 | Elevated stress | 0.88 | ✅ passing | 0.393 | 0.111 | 0.236 | 0.88 s |
-| case_004 | Low-quality signal | 0.28 | ⚠️ flagged | 0.419 | 0.107 | 0.190 | 0.83 s |
+| Case | Label | SQI | Gate | ROUGE-1 | ROUGE-2 | ROUGE-L | BERTScore F1 | Latency |
+|---|---|---|---|---|---|---|---|---|
+| case_001 | BIDMC Patient 23 — Resting (~63 bpm) | 0.618 | passing | 0.507 | 0.146 | 0.243 | 0.815 | 1.77 s |
+| case_002 | BIDMC Patient 05 — Elevated HR (~99 bpm) | 0.665 | passing | 0.417 | 0.103 | 0.231 | 0.802 | 1.19 s |
+| case_003 | BIDMC Patient 32 — Low HRV (~81 bpm) | 0.646 | passing | 0.371 | 0.079 | 0.219 | 0.799 | 0.82 s |
+| case_004 | BIDMC Patient 26 — Low-quality Signal | 0.323 | flagged | 0.403 | 0.077 | 0.201 | 0.792 | 1.13 s |
 
-**Aggregate (passing cases, n=3):** ROUGE-1 = **0.422**, ROUGE-2 = **0.119**, ROUGE-L = **0.236**
+**Aggregate (passing cases, n=3):** ROUGE-1 = **0.431**, ROUGE-2 = **0.109**, ROUGE-L = **0.231**, BERTScore F1 = **0.805**
 
-The ROUGE-2 values are expectedly low: reference and generated texts share domain vocabulary (bpm, HRV, autonomic) but rarely reproduce exact bigrams, as the LLM paraphrases rather than copies. ROUGE-L captures sentence-level recall and is the most meaningful single metric for this task.
+The ROUGE-2 values are expectedly low: reference and generated texts share domain vocabulary (bpm, HRV, autonomic) but rarely reproduce exact bigrams, as the LLM paraphrases rather than copies. ROUGE-L captures sentence-level recall and is the most meaningful ROUGE metric for this task. BERTScore F1 of 0.805 across passing cases confirms strong semantic equivalence even where surface n-gram overlap is modest.
 
-The flagged case (case_004, SQI = 0.28) is excluded from aggregate passing-case statistics per the SQI gate design, but is still scored individually to measure whether the model correctly foregrounds the quality warning — which it does, matching reference content on signal quality caveats.
+The flagged case (case_004, SQI = 0.323) is excluded from aggregate passing-case statistics per the SQI gate design, but is still scored individually to measure whether the model correctly foregrounds the quality warning — which it does, matching reference content on signal quality caveats.
 
 ### Inference Latency and Resource Usage
 
 | Metric | Value |
 |---|---|
-| Mean latency (all 4 cases) | **1.27 s** |
-| Median latency | **0.97 s** |
+| Mean latency (all 4 cases) | **1.23 s** |
+| Median latency | **1.16 s** |
 | Mean input tokens | 373 |
-| Mean output tokens | 278 |
-| Total wall time (4-case run) | 5.25 s |
+| Mean output tokens | 288 |
+| Total wall time (4-case run) | 4.91 s |
 
 Latency is dominated by network round-trip to Groq's API; token generation on LPU hardware is sub-100 ms for this output length. The `st.cache_data` memoisation layer means subsequent identical requests (same feature values, same model) return in < 1 ms from Streamlit's in-memory cache.
 
@@ -167,12 +167,12 @@ CPU and memory usage on Streamlit Community Cloud (1 vCPU, 1 GB RAM) are negligi
 
 ### UX Assessment
 
-The three-paragraph output format (factual summary → physiological context → caveats) was validated qualitatively across all four demo cases:
+The three-paragraph output format (factual summary → physiological context → caveats) was validated qualitatively across all four BIDMC demo cases:
 
-- **Healthy resting**: Model correctly identifies HR as normal, HRV as healthy, and recommends against over-interpreting a single recording.
-- **Exercise recovery**: Model correctly contextualises elevated HR and reduced HRV as post-exertion state rather than pathology.
-- **Low HRV / stress**: Model correctly identifies suppressed autonomic tone without diagnosing stress or recommending intervention.
-- **Low-quality signal**: Model prominently leads with the quality warning before reporting metrics, consistent with system prompt instruction.
+- **BIDMC Patient 23 (resting)**: Model correctly identifies HR of 63 bpm as normal, notes elevated HRV metrics, and recommends against over-interpreting a single recording.
+- **BIDMC Patient 05 (elevated HR)**: Model correctly contextualises HR of 99 bpm and very low HRV (SDNN 11 ms, pNN50 0%) as consistent with sympathetic activation or post-exertion state.
+- **BIDMC Patient 32 (low HRV)**: Model correctly identifies moderate SDNN with preserved RMSSD without diagnosing stress or recommending intervention.
+- **BIDMC Patient 26 (low-quality signal)**: Model prominently leads with the quality warning (SQI = 0.32) before reporting metrics, consistent with system prompt instruction.
 
 No hallucinated medical diagnoses or prescriptions were observed across any generation. Uncertainty language ("may suggest", "could be consistent with", "a single recording cannot confirm") appeared in all outputs.
 
@@ -213,7 +213,7 @@ The Groq API key is stored in Streamlit's server-side secrets vault and is never
 ### Expected Outcomes
 
 - A deployed web application accessible from any browser without user setup, demonstrating LLM-assisted physiological signal interpretation.
-- Interpretations that consistently follow the three-paragraph structure, include uncertainty language, and flag low-quality signals — validated across four synthetic scenarios.
+- Interpretations that consistently follow the three-paragraph structure, include uncertainty language, and flag low-quality signals — validated across all four BIDMC demo cases.
 - A reproducible evaluation showing ROUGE-1 ≈ 0.42 on three passing-quality cases, with per-case latency under 2.5 seconds.
 
 ### Challenges and Mitigations

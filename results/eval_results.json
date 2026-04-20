@@ -2,125 +2,149 @@
   "results": [
     {
       "id": "case_001",
-      "label": "Healthy resting (HR \u2248 65 bpm)",
-      "sqi": 0.91,
-      "candidate": "**What the numbers show:**\nYour heart rate, or beats per minute, is 65.2 bpm. This is a relatively slow heart rate, which is often seen when you're at rest or relaxed. The metrics we use to measure heart rate variability (HRV) are also telling us something about your heart's rhythm. SDNN measures the difference between each heartbeat, and RMSSD measures the variation in the time between heartbeats. Both of these numbers are higher than average, suggesting that your heart rate is quite variable, which can be a sign of good cardiovascular health.\n\n**What this may suggest:**\nThis variability in heart rate may suggest that you're in a relaxed state, possibly even sleeping or meditating. The high SDNN and RMSSD values could also indicate that your body is adapting well to stress or that you have a strong parasympathetic nervous system, which helps regulate your heart rate. However, without more context or data, it's difficult to say for certain.\n\n**Caveats and next steps:**\nKeep in mind that this is just one snapshot of your heart rate and HRV, and it may not reflect your overall health or well-being. If you're concerned about your heart health or have questions about these results, it's always best to consult with a healthcare professional. They can provide personalized advice and help you understand what these numbers mean in the context of your individual situation.",
-      "reference": "Your heart rate of about 65 beats per minute falls comfortably within the normal resting range of 60 to 100 bpm. Your heart rate variability metrics are also healthy: SDNN of 48 ms and RMSSD of 41 ms indicate good beat-to-beat variation, and roughly 23% of consecutive heartbeat intervals differed by more than 50 milliseconds, which is a positive sign.\n\nThese numbers are consistent with a relaxed, resting state and suggest that your autonomic nervous system\u2014particularly the calming parasympathetic branch\u2014is functioning well. People who are well-rested, physically fit, or engaged in relaxation practices often show similar patterns.\n\nKeep in mind that a single 60-second PPG recording captures only a brief snapshot and can be influenced by factors like movement, skin tone, device placement, or ambient light. Signal quality was good for this recording, but these results should not replace a clinical evaluation. If you have any concerns about your heart rhythm or cardiovascular health, please speak with a qualified healthcare provider.",
-      "latency_s": 2.29,
+      "label": "BIDMC Patient 23 \u2014 Resting (~63 bpm)",
+      "sqi": 0.618,
+      "candidate": "**What the numbers show:**\n\nThis PPG recording lasted 60 seconds and detected 63 heartbeats. The heart rate is relatively slow at 62.6 beats per minute (bpm). The Signal Quality Index (SQI) is fair at 0.62, which means the recording quality is not ideal. However, we can still try to interpret the data.\n\n**What this may suggest:**\n\nThe heart rate is lower than average, which may suggest that you are in a relaxed state, possibly resting or engaging in light physical activity. The heart rate variability (HRV) metrics, such as SDNN (126.3 ms) and RMSSD (153.1 ms), are relatively high, which may indicate a good ability to adapt to changing situations. The pNN50 (13.1%) is also within a normal range, suggesting that your heart is responding well to changes in your body.\n\n**Caveats and next steps:**\n\nKeep in mind that the SQI is only fair, which may affect the accuracy of these results. A single PPG recording may not fully represent your typical physiology. If you have concerns about your heart health, it's always best to consult a healthcare professional for a more comprehensive evaluation.",
+      "reference": "Your heart rate of about 63 beats per minute falls comfortably within the normal resting range of 60 to 100 bpm. Your heart rate variability metrics show considerable beat-to-beat variation: SDNN of 126 ms and RMSSD of 153 ms are elevated above typical resting values, and roughly 13% of consecutive heartbeat intervals differed by more than 50 milliseconds.\n\nThese numbers are consistent with a relaxed, resting state and suggest that your autonomic nervous system\u2014particularly the calming parasympathetic branch\u2014is active. Unusually high SDNN and RMSSD at rest can sometimes reflect deep breathing, postural changes, or other physiological influences during the recording window.\n\nKeep in mind that a single 60-second PPG recording captures only a brief snapshot and can be influenced by factors like movement, skin tone, device placement, or ambient light. Signal quality was fair for this recording (SQI \u2248 0.62), so these values should be interpreted with some caution. These results should not replace a clinical evaluation. If you have any concerns about your heart rhythm or cardiovascular health, please speak with a qualified healthcare provider.",
+      "latency_s": 1.77,
       "input_tokens": 373,
-      "output_tokens": 291,
+      "output_tokens": 254,
       "cache_read_tokens": 0,
-      "rouge1": 0.4554,
-      "rouge2": 0.1443,
-      "rougeL": 0.2426
+      "rouge1": 0.5067,
+      "rouge2": 0.1463,
+      "rougeL": 0.2426,
+      "bertscore_precision": 0.8105,
+      "bertscore_recall": 0.8192,
+      "bertscore_f1": 0.8148
     },
     {
       "id": "case_002",
-      "label": "Exercise recovery (HR \u2248 95 bpm)",
-      "sqi": 0.82,
-      "candidate": "**What the numbers show**\n\nYour heart rate during this 60-second recording is 94.8 beats per minute, which is a relatively normal and stable rate. The Signal Quality Index (SQI) of 0.82 indicates that the heart rate signal is of good quality, allowing us to trust the results. The SDNN (standard deviation of normal-to-normal intervals) is 31.2 milliseconds, which suggests that your heart rate is varying slightly from beat to beat. The RMSSD (root mean square of successive differences) is 22.5 milliseconds, indicating that these variations are relatively small. The pNN50 (proportion of normal-to-normal intervals with a difference of 50 milliseconds or more) is 8.4%, which is a relatively low value, suggesting that your heart rate is not changing much from one beat to the next.\n\n**What this may suggest**\n\nThis pattern may suggest that you are in a relatively calm and relaxed state. A stable heart rate and low pNN50 value are often seen during periods of rest or low physical activity. However, it's essential to note that this is just one snapshot and may not reflect your overall physiological state.\n\n**Caveats and next steps**\n\nWhile the SQI is good, it's still essential to interpret these results with caution, as a single 60-second recording may not capture your entire physiological profile. If you're concerned about your heart rate or overall health, it's always best to consult with a qualified healthcare professional for a more comprehensive assessment.",
-      "reference": "Your heart rate of approximately 95 beats per minute is elevated above the typical resting range. Heart rate variability is somewhat reduced, with an SDNN of 31 ms and an RMSSD of 22 ms, and only about 8% of successive beat intervals differed by more than 50 milliseconds.\n\nThis pattern may suggest your body is still recovering from physical exertion, experiencing mild stress, or has an elevated sympathetic nervous system tone. Elevated heart rate and reduced HRV after exercise are completely normal and expected as the cardiovascular system works to return to its baseline state.\n\nA short 60-second PPG recording is a limited window into your physiology, and many everyday factors\u2014recent exercise, caffeine, anxiety, or even a deep breath\u2014can temporarily shift these values. Signal quality was good for this recording. These findings are informational only and are not a diagnosis. If your heart rate remains consistently elevated at rest without a clear explanation, it would be worth mentioning to a healthcare professional.",
-      "latency_s": 1.07,
+      "label": "BIDMC Patient 05 \u2014 Elevated HR (~99 bpm)",
+      "sqi": 0.665,
+      "candidate": "**What the numbers show**\n\nThis recording of your heart rate and rhythm lasted 60 seconds and detected 99 heartbeats. The Signal Quality Index (SQI) is 0.67, which is good, so we can trust the results. Your average heart rate is 98.5 beats per minute (bpm), which is a bit higher than the normal resting heart rate of 60-80 bpm. The metrics that measure the variation in your heart rate (SDNN, RMSSD, and pNN50) are 11.3 ms, 13.6 ms, and 0.0%, respectively.\n\n**What this may suggest**\n\nYour high heart rate may suggest that you are experiencing some level of stress or physical activity. The variation in your heart rate (HRV) is relatively low, which could indicate that your body is under a bit of strain. However, it's essential to note that a single 60-second recording may not provide a complete picture of your overall physiology.\n\n**Caveats and next steps**\n\nKeep in mind that this is just a snapshot of your heart rate and rhythm. It's always best to consult a healthcare professional for a more comprehensive evaluation. They can help you understand the results in the context of your overall health and provide personalized guidance. If you're concerned about your heart rate or rhythm, it's always better to err on the side of caution and seek medical attention.",
+      "reference": "Your heart rate of approximately 99 beats per minute is elevated and near the upper boundary of the normal resting range. Heart rate variability is markedly reduced, with an SDNN of 11 ms and an RMSSD of 14 ms, and none of the successive beat intervals differed by more than 50 milliseconds.\n\nThis pattern\u2014elevated heart rate combined with very low HRV\u2014may suggest sustained sympathetic nervous system activation, physical exertion, stress, fever, or other physiological demands. Low pNN50 of 0% indicates highly regular, clock-like beating with minimal parasympathetic influence.\n\nA short 60-second PPG recording is a limited window into your physiology, and many everyday factors\u2014recent exercise, caffeine, anxiety, or illness\u2014can temporarily shift these values. Signal quality was good for this recording (SQI \u2248 0.67). These findings are informational only and are not a diagnosis. If your heart rate remains consistently elevated at rest without a clear explanation, it would be worth mentioning to a healthcare professional.",
+      "latency_s": 1.19,
       "input_tokens": 373,
-      "output_tokens": 311,
+      "output_tokens": 291,
       "cache_read_tokens": 0,
-      "rouge1": 0.4183,
-      "rouge2": 0.1014,
-      "rougeL": 0.2308
+      "rouge1": 0.4165,
+      "rouge2": 0.1034,
+      "rougeL": 0.2314,
+      "bertscore_precision": 0.7919,
+      "bertscore_recall": 0.812,
+      "bertscore_f1": 0.8018
     },
     {
       "id": "case_003",
-      "label": "Elevated stress (HR \u2248 80 bpm, low HRV)",
-      "sqi": 0.88,
-      "candidate": "**What the numbers show**\n\nThis recording shows a heart rate of 80.1 beats per minute (bpm), which is a relatively slow pace. The Signal Quality Index (SQI) is 0.88, indicating good signal quality. The heart rate variability (HRV) metrics are SDNN (18.6 milliseconds), RMSSD (14.9 milliseconds), and pNN50 (2.1%). These numbers give us a sense of how much your heart rate varies from one beat to the next.\n\n**What this may suggest**\n\nA heart rate of 80.1 bpm may suggest that you are in a relaxed state, possibly resting or engaging in light physical activity. The HRV metrics indicate a moderate level of heart rate variability, which is consistent with a calm and stable physiological state. However, the exact meaning of these numbers can depend on various factors, such as your individual baseline and the context in which the recording was taken.\n\n**Caveats and next steps**\n\nWhile the good signal quality and HRV metrics suggest a stable physiological state, it's essential to consider this as a single snapshot rather than a comprehensive assessment. A single recording may not accurately reflect your overall health or physiological state. If you have concerns about your heart rate or overall well-being, it's always best to consult with a healthcare professional for a more thorough evaluation.",
-      "reference": "Your heart rate of about 80 beats per minute is within the normal resting range, but your heart rate variability metrics are notably low: SDNN of 19 ms and RMSSD of 15 ms are below what is typically seen at rest, and fewer than 3% of consecutive beat intervals differed by more than 50 milliseconds.\n\nLow HRV with a normal-to-moderate heart rate could be consistent with psychological stress, fatigue, poor sleep, or sustained activation of the sympathetic nervous system. It is not necessarily a sign of a medical problem\u2014many healthy people have transient dips in HRV during demanding periods.\n\nBecause HRV is sensitive to many short-term influences, a single recording offers limited insight. Signal quality was good here, but conclusions about long-term autonomic health require repeated measurements over days or weeks. These results do not constitute a medical diagnosis. If you are concerned about persistent stress or fatigue, speaking with a healthcare provider is a worthwhile step.",
-      "latency_s": 0.88,
+      "label": "BIDMC Patient 32 \u2014 Low HRV (~81 bpm)",
+      "sqi": 0.646,
+      "candidate": "**What the numbers show:**\nThis recording is 60 seconds long and detected 81 heartbeats. The signal quality is fair, which means there might be some minor issues with the data. The heart rate is 81.2 beats per minute, which is a relatively normal resting heart rate. The heart rate variability (HRV) metrics suggest that the heart is beating with some variation in timing. Specifically, the SDNN (standard deviation of normal-to-normal intervals) is 26.5 milliseconds, the RMSSD (root mean square of successive differences) is 45.6 milliseconds, and the pNN50 (percentage of normal-to-normal intervals greater than 50 milliseconds) is 22.8%.\n\n**What this may suggest:**\nThese HRV metrics may suggest that the body is in a relatively relaxed state, possibly during rest or light activity. The variation in heart rate timing could indicate that the autonomic nervous system is functioning normally, with a balance between the sympathetic (stress) and parasympathetic (relaxation) branches. However, it's essential to note that a single recording is not enough to draw definitive conclusions.\n\n**Caveats and next steps:**\nGiven the fair signal quality, these results should be interpreted with caution. A single 60-second recording may not accurately reflect the user's true physiology. For a more comprehensive understanding, it's recommended to consult a clinician or use multiple recordings over time.",
+      "reference": "Your heart rate of about 81 beats per minute is within the normal resting range. Heart rate variability metrics are moderate: SDNN of 27 ms is below typical resting values, while RMSSD of 46 ms and pNN50 of 23% are more consistent with normal parasympathetic tone, suggesting some discrepancy in short-term versus overall variability.\n\nModerate SDNN with preserved RMSSD may reflect a recording where the heart rate was somewhat variable over the full minute but retained normal short-interval fluctuations. This pattern can be seen in people who are generally healthy but experiencing mild stress or fatigue.\n\nBecause HRV is sensitive to many short-term influences, a single recording offers limited insight. Signal quality was good for this recording (SQI \u2248 0.65). Conclusions about long-term autonomic health require repeated measurements over days or weeks. These results do not constitute a medical diagnosis. If you are concerned about your cardiovascular health, speaking with a healthcare provider is a worthwhile step.",
+      "latency_s": 0.82,
       "input_tokens": 373,
-      "output_tokens": 276,
+      "output_tokens": 296,
       "cache_read_tokens": 0,
-      "rouge1": 0.3927,
-      "rouge2": 0.1105,
-      "rougeL": 0.2356
+      "rouge1": 0.3708,
+      "rouge2": 0.0787,
+      "rougeL": 0.2193,
+      "bertscore_precision": 0.7858,
+      "bertscore_recall": 0.813,
+      "bertscore_f1": 0.7992
     },
     {
       "id": "case_004",
-      "label": "Low-quality signal (HR \u2248 70 bpm)",
-      "sqi": 0.28,
-      "candidate": "**What the numbers show**\n\nBased on this PPG recording, your heart rate is around 71 beats per minute. This is a relatively slow heart rate, which may be normal for some people, especially if they are resting or relaxed. The signal quality is poor, which means we should be cautious when interpreting these results. The metrics that measure the variation in your heart rate (SDNN, RMSSD, and pNN50) are relatively high, suggesting that your heart rate is not beating at a perfectly consistent pace.\n\n**What this may suggest**\n\nThese results may suggest that you are in a relaxed state, possibly resting or sleeping. The high variation in your heart rate could indicate that your body is not under a lot of stress or physical activity. However, it's essential to note that a poor signal quality may affect the accuracy of these results.\n\n**Caveats and next steps**\n\nWe should interpret these results with caution due to the poor signal quality. It's possible that the actual physiological state may differ from what these numbers suggest. For a more accurate assessment, it's recommended to consult a healthcare professional and obtain a recording with better signal quality.",
-      "reference": "This recording has a low signal quality index of 0.28, which means the PPG waveform contains substantial noise or artefact. As a result, the extracted heart rate and HRV numbers\u2014approximately 71 bpm, SDNN 55 ms, RMSSD 48 ms, and pNN50 32%\u2014should be treated with significant caution and may not accurately reflect your true physiology.\n\nWhen signal quality is poor, peak detection can miss real heartbeats or flag noise as beats, leading to metrics that appear abnormal or unusually variable. The numbers shown could be driven by movement artefact, poor sensor contact, or environmental interference rather than genuine cardiac activity.\n\nFor a meaningful reading, we recommend re-recording with the sensor held still, ensuring firm and steady skin contact, and minimising ambient light interference. These results are not suitable for health decision-making. Please do not draw conclusions from a low-quality recording, and consult a healthcare provider if you need an accurate assessment of your heart rate or rhythm.",
-      "latency_s": 0.83,
+      "label": "BIDMC Patient 26 \u2014 Low-quality Signal",
+      "sqi": 0.323,
+      "candidate": "**Interpretation of PPG-derived physiological features**\n\n**What the numbers show:**\nThis recording shows a relatively low heart rate of 66.6 beats per minute (bpm). The Signal Quality Index (SQI) is 0.32, which is considered poor. This means that the accuracy of the results may be compromised, and we should interpret the findings with caution. The heart rate variability (HRV) metrics indicate a high level of variation in the time between heartbeats, with a standard deviation of normal-to-normal intervals (SDNN) of 443.6 milliseconds, a root mean square of successive differences (RMSSD) of 676.0 milliseconds, and a percentage of normal-to-normal intervals with a difference of more than 50 milliseconds (pNN50) of 49.1%.\n\n**What this may suggest:**\nGiven the high HRV metrics, this may suggest that the body is in a state of relaxation or low-level physical activity. However, due to the poor signal quality, it's difficult to draw firm conclusions. The low heart rate could also be consistent with a state of physical or emotional relaxation.\n\n**Caveats and next steps:**\nWe should interpret these results with caution due to the poor signal quality. A single PPG recording is not sufficient to make definitive conclusions about an individual's physiological state. If you're concerned about your heart health or experience any symptoms, it's always best to consult with a qualified healthcare professional for a thorough evaluation and personalized advice.",
+      "reference": "This recording has a low signal quality index of 0.32, which means the PPG waveform contains substantial noise or artefact. As a result, the extracted heart rate and HRV numbers\u2014approximately 67 bpm, SDNN 444 ms, RMSSD 676 ms, and pNN50 49%\u2014should be treated with significant caution and almost certainly do not accurately reflect true physiology.\n\nWhen signal quality is poor, peak detection can miss real heartbeats or flag noise as beats, leading to wildly inflated HRV metrics like the ones seen here. An SDNN of 444 ms and RMSSD of 676 ms are far outside any physiological range and are driven by movement artefact, poor sensor contact, or environmental interference rather than genuine cardiac activity.\n\nFor a meaningful reading, we recommend re-recording with the sensor held still, ensuring firm and steady skin contact, and minimising ambient light interference. These results are not suitable for health decision-making. Please do not draw conclusions from a low-quality recording, and consult a healthcare provider if you need an accurate assessment of your heart rate or rhythm.",
+      "latency_s": 1.13,
       "input_tokens": 374,
-      "output_tokens": 234,
+      "output_tokens": 309,
       "cache_read_tokens": 0,
-      "rouge1": 0.419,
-      "rouge2": 0.1067,
-      "rougeL": 0.1899
+      "rouge1": 0.4029,
+      "rouge2": 0.0771,
+      "rougeL": 0.2014,
+      "bertscore_precision": 0.776,
+      "bertscore_recall": 0.8093,
+      "bertscore_f1": 0.7923
     }
   ],
   "passing": [
     {
       "id": "case_001",
-      "label": "Healthy resting (HR \u2248 65 bpm)",
-      "sqi": 0.91,
-      "candidate": "**What the numbers show:**\nYour heart rate, or beats per minute, is 65.2 bpm. This is a relatively slow heart rate, which is often seen when you're at rest or relaxed. The metrics we use to measure heart rate variability (HRV) are also telling us something about your heart's rhythm. SDNN measures the difference between each heartbeat, and RMSSD measures the variation in the time between heartbeats. Both of these numbers are higher than average, suggesting that your heart rate is quite variable, which can be a sign of good cardiovascular health.\n\n**What this may suggest:**\nThis variability in heart rate may suggest that you're in a relaxed state, possibly even sleeping or meditating. The high SDNN and RMSSD values could also indicate that your body is adapting well to stress or that you have a strong parasympathetic nervous system, which helps regulate your heart rate. However, without more context or data, it's difficult to say for certain.\n\n**Caveats and next steps:**\nKeep in mind that this is just one snapshot of your heart rate and HRV, and it may not reflect your overall health or well-being. If you're concerned about your heart health or have questions about these results, it's always best to consult with a healthcare professional. They can provide personalized advice and help you understand what these numbers mean in the context of your individual situation.",
-      "reference": "Your heart rate of about 65 beats per minute falls comfortably within the normal resting range of 60 to 100 bpm. Your heart rate variability metrics are also healthy: SDNN of 48 ms and RMSSD of 41 ms indicate good beat-to-beat variation, and roughly 23% of consecutive heartbeat intervals differed by more than 50 milliseconds, which is a positive sign.\n\nThese numbers are consistent with a relaxed, resting state and suggest that your autonomic nervous system\u2014particularly the calming parasympathetic branch\u2014is functioning well. People who are well-rested, physically fit, or engaged in relaxation practices often show similar patterns.\n\nKeep in mind that a single 60-second PPG recording captures only a brief snapshot and can be influenced by factors like movement, skin tone, device placement, or ambient light. Signal quality was good for this recording, but these results should not replace a clinical evaluation. If you have any concerns about your heart rhythm or cardiovascular health, please speak with a qualified healthcare provider.",
-      "latency_s": 2.29,
+      "label": "BIDMC Patient 23 \u2014 Resting (~63 bpm)",
+      "sqi": 0.618,
+      "candidate": "**What the numbers show:**\n\nThis PPG recording lasted 60 seconds and detected 63 heartbeats. The heart rate is relatively slow at 62.6 beats per minute (bpm). The Signal Quality Index (SQI) is fair at 0.62, which means the recording quality is not ideal. However, we can still try to interpret the data.\n\n**What this may suggest:**\n\nThe heart rate is lower than average, which may suggest that you are in a relaxed state, possibly resting or engaging in light physical activity. The heart rate variability (HRV) metrics, such as SDNN (126.3 ms) and RMSSD (153.1 ms), are relatively high, which may indicate a good ability to adapt to changing situations. The pNN50 (13.1%) is also within a normal range, suggesting that your heart is responding well to changes in your body.\n\n**Caveats and next steps:**\n\nKeep in mind that the SQI is only fair, which may affect the accuracy of these results. A single PPG recording may not fully represent your typical physiology. If you have concerns about your heart health, it's always best to consult a healthcare professional for a more comprehensive evaluation.",
+      "reference": "Your heart rate of about 63 beats per minute falls comfortably within the normal resting range of 60 to 100 bpm. Your heart rate variability metrics show considerable beat-to-beat variation: SDNN of 126 ms and RMSSD of 153 ms are elevated above typical resting values, and roughly 13% of consecutive heartbeat intervals differed by more than 50 milliseconds.\n\nThese numbers are consistent with a relaxed, resting state and suggest that your autonomic nervous system\u2014particularly the calming parasympathetic branch\u2014is active. Unusually high SDNN and RMSSD at rest can sometimes reflect deep breathing, postural changes, or other physiological influences during the recording window.\n\nKeep in mind that a single 60-second PPG recording captures only a brief snapshot and can be influenced by factors like movement, skin tone, device placement, or ambient light. Signal quality was fair for this recording (SQI \u2248 0.62), so these values should be interpreted with some caution. These results should not replace a clinical evaluation. If you have any concerns about your heart rhythm or cardiovascular health, please speak with a qualified healthcare provider.",
+      "latency_s": 1.77,
       "input_tokens": 373,
-      "output_tokens": 291,
+      "output_tokens": 254,
       "cache_read_tokens": 0,
-      "rouge1": 0.4554,
-      "rouge2": 0.1443,
-      "rougeL": 0.2426
+      "rouge1": 0.5067,
+      "rouge2": 0.1463,
+      "rougeL": 0.2426,
+      "bertscore_precision": 0.8105,
+      "bertscore_recall": 0.8192,
+      "bertscore_f1": 0.8148
     },
     {
       "id": "case_002",
-      "label": "Exercise recovery (HR \u2248 95 bpm)",
-      "sqi": 0.82,
-      "candidate": "**What the numbers show**\n\nYour heart rate during this 60-second recording is 94.8 beats per minute, which is a relatively normal and stable rate. The Signal Quality Index (SQI) of 0.82 indicates that the heart rate signal is of good quality, allowing us to trust the results. The SDNN (standard deviation of normal-to-normal intervals) is 31.2 milliseconds, which suggests that your heart rate is varying slightly from beat to beat. The RMSSD (root mean square of successive differences) is 22.5 milliseconds, indicating that these variations are relatively small. The pNN50 (proportion of normal-to-normal intervals with a difference of 50 milliseconds or more) is 8.4%, which is a relatively low value, suggesting that your heart rate is not changing much from one beat to the next.\n\n**What this may suggest**\n\nThis pattern may suggest that you are in a relatively calm and relaxed state. A stable heart rate and low pNN50 value are often seen during periods of rest or low physical activity. However, it's essential to note that this is just one snapshot and may not reflect your overall physiological state.\n\n**Caveats and next steps**\n\nWhile the SQI is good, it's still essential to interpret these results with caution, as a single 60-second recording may not capture your entire physiological profile. If you're concerned about your heart rate or overall health, it's always best to consult with a qualified healthcare professional for a more comprehensive assessment.",
-      "reference": "Your heart rate of approximately 95 beats per minute is elevated above the typical resting range. Heart rate variability is somewhat reduced, with an SDNN of 31 ms and an RMSSD of 22 ms, and only about 8% of successive beat intervals differed by more than 50 milliseconds.\n\nThis pattern may suggest your body is still recovering from physical exertion, experiencing mild stress, or has an elevated sympathetic nervous system tone. Elevated heart rate and reduced HRV after exercise are completely normal and expected as the cardiovascular system works to return to its baseline state.\n\nA short 60-second PPG recording is a limited window into your physiology, and many everyday factors\u2014recent exercise, caffeine, anxiety, or even a deep breath\u2014can temporarily shift these values. Signal quality was good for this recording. These findings are informational only and are not a diagnosis. If your heart rate remains consistently elevated at rest without a clear explanation, it would be worth mentioning to a healthcare professional.",
-      "latency_s": 1.07,
+      "label": "BIDMC Patient 05 \u2014 Elevated HR (~99 bpm)",
+      "sqi": 0.665,
+      "candidate": "**What the numbers show**\n\nThis recording of your heart rate and rhythm lasted 60 seconds and detected 99 heartbeats. The Signal Quality Index (SQI) is 0.67, which is good, so we can trust the results. Your average heart rate is 98.5 beats per minute (bpm), which is a bit higher than the normal resting heart rate of 60-80 bpm. The metrics that measure the variation in your heart rate (SDNN, RMSSD, and pNN50) are 11.3 ms, 13.6 ms, and 0.0%, respectively.\n\n**What this may suggest**\n\nYour high heart rate may suggest that you are experiencing some level of stress or physical activity. The variation in your heart rate (HRV) is relatively low, which could indicate that your body is under a bit of strain. However, it's essential to note that a single 60-second recording may not provide a complete picture of your overall physiology.\n\n**Caveats and next steps**\n\nKeep in mind that this is just a snapshot of your heart rate and rhythm. It's always best to consult a healthcare professional for a more comprehensive evaluation. They can help you understand the results in the context of your overall health and provide personalized guidance. If you're concerned about your heart rate or rhythm, it's always better to err on the side of caution and seek medical attention.",
+      "reference": "Your heart rate of approximately 99 beats per minute is elevated and near the upper boundary of the normal resting range. Heart rate variability is markedly reduced, with an SDNN of 11 ms and an RMSSD of 14 ms, and none of the successive beat intervals differed by more than 50 milliseconds.\n\nThis pattern\u2014elevated heart rate combined with very low HRV\u2014may suggest sustained sympathetic nervous system activation, physical exertion, stress, fever, or other physiological demands. Low pNN50 of 0% indicates highly regular, clock-like beating with minimal parasympathetic influence.\n\nA short 60-second PPG recording is a limited window into your physiology, and many everyday factors\u2014recent exercise, caffeine, anxiety, or illness\u2014can temporarily shift these values. Signal quality was good for this recording (SQI \u2248 0.67). These findings are informational only and are not a diagnosis. If your heart rate remains consistently elevated at rest without a clear explanation, it would be worth mentioning to a healthcare professional.",
+      "latency_s": 1.19,
       "input_tokens": 373,
-      "output_tokens": 311,
+      "output_tokens": 291,
       "cache_read_tokens": 0,
-      "rouge1": 0.4183,
-      "rouge2": 0.1014,
-      "rougeL": 0.2308
+      "rouge1": 0.4165,
+      "rouge2": 0.1034,
+      "rougeL": 0.2314,
+      "bertscore_precision": 0.7919,
+      "bertscore_recall": 0.812,
+      "bertscore_f1": 0.8018
     },
     {
       "id": "case_003",
-      "label": "Elevated stress (HR \u2248 80 bpm, low HRV)",
-      "sqi": 0.88,
-      "candidate": "**What the numbers show**\n\nThis recording shows a heart rate of 80.1 beats per minute (bpm), which is a relatively slow pace. The Signal Quality Index (SQI) is 0.88, indicating good signal quality. The heart rate variability (HRV) metrics are SDNN (18.6 milliseconds), RMSSD (14.9 milliseconds), and pNN50 (2.1%). These numbers give us a sense of how much your heart rate varies from one beat to the next.\n\n**What this may suggest**\n\nA heart rate of 80.1 bpm may suggest that you are in a relaxed state, possibly resting or engaging in light physical activity. The HRV metrics indicate a moderate level of heart rate variability, which is consistent with a calm and stable physiological state. However, the exact meaning of these numbers can depend on various factors, such as your individual baseline and the context in which the recording was taken.\n\n**Caveats and next steps**\n\nWhile the good signal quality and HRV metrics suggest a stable physiological state, it's essential to consider this as a single snapshot rather than a comprehensive assessment. A single recording may not accurately reflect your overall health or physiological state. If you have concerns about your heart rate or overall well-being, it's always best to consult with a healthcare professional for a more thorough evaluation.",
-      "reference": "Your heart rate of about 80 beats per minute is within the normal resting range, but your heart rate variability metrics are notably low: SDNN of 19 ms and RMSSD of 15 ms are below what is typically seen at rest, and fewer than 3% of consecutive beat intervals differed by more than 50 milliseconds.\n\nLow HRV with a normal-to-moderate heart rate could be consistent with psychological stress, fatigue, poor sleep, or sustained activation of the sympathetic nervous system. It is not necessarily a sign of a medical problem\u2014many healthy people have transient dips in HRV during demanding periods.\n\nBecause HRV is sensitive to many short-term influences, a single recording offers limited insight. Signal quality was good here, but conclusions about long-term autonomic health require repeated measurements over days or weeks. These results do not constitute a medical diagnosis. If you are concerned about persistent stress or fatigue, speaking with a healthcare provider is a worthwhile step.",
-      "latency_s": 0.88,
+      "label": "BIDMC Patient 32 \u2014 Low HRV (~81 bpm)",
+      "sqi": 0.646,
+      "candidate": "**What the numbers show:**\nThis recording is 60 seconds long and detected 81 heartbeats. The signal quality is fair, which means there might be some minor issues with the data. The heart rate is 81.2 beats per minute, which is a relatively normal resting heart rate. The heart rate variability (HRV) metrics suggest that the heart is beating with some variation in timing. Specifically, the SDNN (standard deviation of normal-to-normal intervals) is 26.5 milliseconds, the RMSSD (root mean square of successive differences) is 45.6 milliseconds, and the pNN50 (percentage of normal-to-normal intervals greater than 50 milliseconds) is 22.8%.\n\n**What this may suggest:**\nThese HRV metrics may suggest that the body is in a relatively relaxed state, possibly during rest or light activity. The variation in heart rate timing could indicate that the autonomic nervous system is functioning normally, with a balance between the sympathetic (stress) and parasympathetic (relaxation) branches. However, it's essential to note that a single recording is not enough to draw definitive conclusions.\n\n**Caveats and next steps:**\nGiven the fair signal quality, these results should be interpreted with caution. A single 60-second recording may not accurately reflect the user's true physiology. For a more comprehensive understanding, it's recommended to consult a clinician or use multiple recordings over time.",
+      "reference": "Your heart rate of about 81 beats per minute is within the normal resting range. Heart rate variability metrics are moderate: SDNN of 27 ms is below typical resting values, while RMSSD of 46 ms and pNN50 of 23% are more consistent with normal parasympathetic tone, suggesting some discrepancy in short-term versus overall variability.\n\nModerate SDNN with preserved RMSSD may reflect a recording where the heart rate was somewhat variable over the full minute but retained normal short-interval fluctuations. This pattern can be seen in people who are generally healthy but experiencing mild stress or fatigue.\n\nBecause HRV is sensitive to many short-term influences, a single recording offers limited insight. Signal quality was good for this recording (SQI \u2248 0.65). Conclusions about long-term autonomic health require repeated measurements over days or weeks. These results do not constitute a medical diagnosis. If you are concerned about your cardiovascular health, speaking with a healthcare provider is a worthwhile step.",
+      "latency_s": 0.82,
       "input_tokens": 373,
-      "output_tokens": 276,
+      "output_tokens": 296,
       "cache_read_tokens": 0,
-      "rouge1": 0.3927,
-      "rouge2": 0.1105,
-      "rougeL": 0.2356
+      "rouge1": 0.3708,
+      "rouge2": 0.0787,
+      "rougeL": 0.2193,
+      "bertscore_precision": 0.7858,
+      "bertscore_recall": 0.813,
+      "bertscore_f1": 0.7992
     }
   ],
   "flagged": [
     {
       "id": "case_004",
-      "label": "Low-quality signal (HR \u2248 70 bpm)",
-      "sqi": 0.28,
-      "candidate": "**What the numbers show**\n\nBased on this PPG recording, your heart rate is around 71 beats per minute. This is a relatively slow heart rate, which may be normal for some people, especially if they are resting or relaxed. The signal quality is poor, which means we should be cautious when interpreting these results. The metrics that measure the variation in your heart rate (SDNN, RMSSD, and pNN50) are relatively high, suggesting that your heart rate is not beating at a perfectly consistent pace.\n\n**What this may suggest**\n\nThese results may suggest that you are in a relaxed state, possibly resting or sleeping. The high variation in your heart rate could indicate that your body is not under a lot of stress or physical activity. However, it's essential to note that a poor signal quality may affect the accuracy of these results.\n\n**Caveats and next steps**\n\nWe should interpret these results with caution due to the poor signal quality. It's possible that the actual physiological state may differ from what these numbers suggest. For a more accurate assessment, it's recommended to consult a healthcare professional and obtain a recording with better signal quality.",
-      "reference": "This recording has a low signal quality index of 0.28, which means the PPG waveform contains substantial noise or artefact. As a result, the extracted heart rate and HRV numbers\u2014approximately 71 bpm, SDNN 55 ms, RMSSD 48 ms, and pNN50 32%\u2014should be treated with significant caution and may not accurately reflect your true physiology.\n\nWhen signal quality is poor, peak detection can miss real heartbeats or flag noise as beats, leading to metrics that appear abnormal or unusually variable. The numbers shown could be driven by movement artefact, poor sensor contact, or environmental interference rather than genuine cardiac activity.\n\nFor a meaningful reading, we recommend re-recording with the sensor held still, ensuring firm and steady skin contact, and minimising ambient light interference. These results are not suitable for health decision-making. Please do not draw conclusions from a low-quality recording, and consult a healthcare provider if you need an accurate assessment of your heart rate or rhythm.",
-      "latency_s": 0.83,
+      "label": "BIDMC Patient 26 \u2014 Low-quality Signal",
+      "sqi": 0.323,
+      "candidate": "**Interpretation of PPG-derived physiological features**\n\n**What the numbers show:**\nThis recording shows a relatively low heart rate of 66.6 beats per minute (bpm). The Signal Quality Index (SQI) is 0.32, which is considered poor. This means that the accuracy of the results may be compromised, and we should interpret the findings with caution. The heart rate variability (HRV) metrics indicate a high level of variation in the time between heartbeats, with a standard deviation of normal-to-normal intervals (SDNN) of 443.6 milliseconds, a root mean square of successive differences (RMSSD) of 676.0 milliseconds, and a percentage of normal-to-normal intervals with a difference of more than 50 milliseconds (pNN50) of 49.1%.\n\n**What this may suggest:**\nGiven the high HRV metrics, this may suggest that the body is in a state of relaxation or low-level physical activity. However, due to the poor signal quality, it's difficult to draw firm conclusions. The low heart rate could also be consistent with a state of physical or emotional relaxation.\n\n**Caveats and next steps:**\nWe should interpret these results with caution due to the poor signal quality. A single PPG recording is not sufficient to make definitive conclusions about an individual's physiological state. If you're concerned about your heart health or experience any symptoms, it's always best to consult with a qualified healthcare professional for a thorough evaluation and personalized advice.",
+      "reference": "This recording has a low signal quality index of 0.32, which means the PPG waveform contains substantial noise or artefact. As a result, the extracted heart rate and HRV numbers\u2014approximately 67 bpm, SDNN 444 ms, RMSSD 676 ms, and pNN50 49%\u2014should be treated with significant caution and almost certainly do not accurately reflect true physiology.\n\nWhen signal quality is poor, peak detection can miss real heartbeats or flag noise as beats, leading to wildly inflated HRV metrics like the ones seen here. An SDNN of 444 ms and RMSSD of 676 ms are far outside any physiological range and are driven by movement artefact, poor sensor contact, or environmental interference rather than genuine cardiac activity.\n\nFor a meaningful reading, we recommend re-recording with the sensor held still, ensuring firm and steady skin contact, and minimising ambient light interference. These results are not suitable for health decision-making. Please do not draw conclusions from a low-quality recording, and consult a healthcare provider if you need an accurate assessment of your heart rate or rhythm.",
+      "latency_s": 1.13,
       "input_tokens": 374,
-      "output_tokens": 234,
+      "output_tokens": 309,
       "cache_read_tokens": 0,
-      "rouge1": 0.419,
-      "rouge2": 0.1067,
-      "rougeL": 0.1899
+      "rouge1": 0.4029,
+      "rouge2": 0.0771,
+      "rougeL": 0.2014,
+      "bertscore_precision": 0.776,
+      "bertscore_recall": 0.8093,
+      "bertscore_f1": 0.7923
     }
   ],
   "aggregate_all": {
     "latency_s": {
-      "mean": 1.2675,
-      "std": 0.6895,
+      "mean": 1.2275,
+      "std": 0.3963,
       "n": 4
     },
     "input_tokens": {
@@ -129,8 +153,8 @@
       "n": 4
     },
     "output_tokens": {
-      "mean": 278.0,
-      "std": 32.6497,
+      "mean": 287.5,
+      "std": 23.5867,
       "n": 4
     },
     "cache_read_tokens": {
@@ -139,25 +163,40 @@
       "n": 4
     },
     "rouge1": {
-      "mean": 0.4214,
-      "std": 0.0258,
+      "mean": 0.4242,
+      "std": 0.0582,
       "n": 4
     },
     "rouge2": {
-      "mean": 0.1157,
-      "std": 0.0194,
+      "mean": 0.1014,
+      "std": 0.0323,
       "n": 4
     },
     "rougeL": {
-      "mean": 0.2247,
-      "std": 0.0237,
+      "mean": 0.2237,
+      "std": 0.0176,
+      "n": 4
+    },
+    "bertscore_precision": {
+      "mean": 0.7911,
+      "std": 0.0145,
+      "n": 4
+    },
+    "bertscore_recall": {
+      "mean": 0.8134,
+      "std": 0.0042,
+      "n": 4
+    },
+    "bertscore_f1": {
+      "mean": 0.802,
+      "std": 0.0094,
       "n": 4
     }
   },
   "aggregate_passing": {
     "latency_s": {
-      "mean": 1.4133,
-      "std": 0.7651,
+      "mean": 1.26,
+      "std": 0.4789,
       "n": 3
     },
     "input_tokens": {
@@ -166,8 +205,8 @@
       "n": 3
     },
     "output_tokens": {
-      "mean": 292.6667,
-      "std": 17.5594,
+      "mean": 280.3333,
+      "std": 22.942,
       "n": 3
     },
     "cache_read_tokens": {
@@ -176,18 +215,33 @@
       "n": 3
     },
     "rouge1": {
-      "mean": 0.4221,
-      "std": 0.0315,
+      "mean": 0.4313,
+      "std": 0.0692,
       "n": 3
     },
     "rouge2": {
-      "mean": 0.1187,
-      "std": 0.0226,
+      "mean": 0.1095,
+      "std": 0.0342,
       "n": 3
     },
     "rougeL": {
-      "mean": 0.2363,
-      "std": 0.0059,
+      "mean": 0.2311,
+      "std": 0.0117,
+      "n": 3
+    },
+    "bertscore_precision": {
+      "mean": 0.7961,
+      "std": 0.0129,
+      "n": 3
+    },
+    "bertscore_recall": {
+      "mean": 0.8147,
+      "std": 0.0039,
+      "n": 3
+    },
+    "bertscore_f1": {
+      "mean": 0.8053,
+      "std": 0.0084,
       "n": 3
     }
   },
@@ -197,8 +251,8 @@
   "meta": {
     "model": "llama-3.1-8b-instant",
     "primary_model": "llama-3.3-70b-versatile",
-    "total_wall_s": 5.25,
-    "skip_bert": true,
+    "total_wall_s": 4.91,
+    "skip_bert": false,
     "gold_set": "data/gold_set.json",
     "run_date": "2026-04-19"
   }

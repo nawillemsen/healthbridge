@@ -221,6 +221,8 @@ with tab_analyze:
 
     else:
         # --- Load signal ---
+        raw = None
+        signal_label = ""
         if source == "Demo case":
             raw = _load_demo_clip(demo_choice)
             signal_label = demo_choice
@@ -234,7 +236,7 @@ with tab_analyze:
                     raw = None
                 signal_label = uploaded.name if uploaded else ""
 
-        if "raw" in dir() and raw is not None:
+        if raw is not None:
             # --- Preprocess ---
             with st.spinner("Preprocessing signal…"):
                 try:

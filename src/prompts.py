@@ -20,10 +20,10 @@ with caution and may not reflect the user's true physiology.
 
 
 def build_messages(features: dict) -> list[dict]:
-    """Build the messages list for the Anthropic API call.
+    """Build the [user] messages list for the Groq API call.
 
-    The system prompt is returned as a top-level system string (handled separately
-    in llm_client). This function returns the human turn only.
+    The system prompt is prepended by llm_client. This function returns the
+    human turn only.
     """
     sqi = features["sqi"]
     sqi_str = f"{sqi:.2f}" if sqi == sqi else "unavailable"  # nan check
